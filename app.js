@@ -1,46 +1,96 @@
-const capitalAlphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-const lowercaseAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const mainBox = document.getElementById('main')
-
-
+const capitalAlphabet = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+];
+const lowercaseAlphabet = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+];
+const mainBox = document.getElementById("main");
 
 // canvas.width = window.innerWidth;
 // canvas.height = window.innerHeight;
 
-const randomIntiger = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const randomIntiger = (min, max) =>
+    Math.floor(Math.random() * (max - min)) + min;
 // console.log(randomNumber(0, 2))
 // console.log('randomNumber', randomNumber, alphabetIntervel)
 
-
 const alphabetIntervel = () => {
     setInterval(() => {
-        renderAlphabets()
-        console.log('object', renderAlphabets())
+        renderAlphabets();
+        console.log("object", renderAlphabets());
     }, 1000);
-}
+};
 
 const init = () => {
-    alphabetIntervel()
-    renderAlphabets()
-}
+    alphabetIntervel();
+    renderAlphabets();
+};
 
 const getAlphabets = () => {
     const alphabets = randomIntiger(0, 2) ? lowercaseAlphabet : capitalAlphabet;
-    return alphabets[randomIntiger(0, 26)]
-}
+    return alphabets[randomIntiger(0, 26)];
+};
 
 const renderAlphabets = () => {
-    mainBox.innerHTML = `<span class"alphabets">${getAlphabets()}  </span>`
-    let top = 0
+    mainBox.innerHTML = `<span class"alphabets">${getAlphabets()}  </span>`;
+    let top = 0;
     setInterval(() => {
-        top += '20px'
+        top += "20px";
         mainBox.style.top = top;
     }, 1000);
-}
+};
 
-
-init()
-
+init();
 
 // canvas.width = window.innerWidth;
 // canvas.height = window.innerHeight;
